@@ -1,1 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <style>
+        body, html{
+            margin: 0;
+            padding: 0;
+        }
 
+        body{
+            font-size: 12px;
+        }
+
+        .media{
+            margin: 15px auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="media">
+      <h1>Video and audio tutorial</h1>
+        <h1> Audio / Video CanplayType Check</h1>
+
+        <!-- ogv format -->
+        <video id="video1" src="video_sample_001.ogv" controls></video>
+        <div class="log">
+            video/ogg can play type : <span id="vlog1"></span>
+        </div>
+    </div>
+
+    <!-- webm format -->
+    <div class="media">
+        <video id="video2" src="video_sample_002.webm" controls></video>
+        <div class="log">
+            audio/acc can play type : <span id="vlog2"></span>
+        </div>
+    </div>
+</body>
+<script>
+
+    var video1 = document.getElementById("video1");
+    var video2 = document.getElementById("video2");
+    var videoElem03 = document.getElementById("video3");
+
+    //ogg format check
+    document.getElementById("vlog1").innerHTML = video1.canPlayType('video/ogg');
+
+    //webm format check
+    document.getElementById("vlog2").innerHTML = video2.canPlayType('audio/acc');    
+    
+</script>
+</html>
