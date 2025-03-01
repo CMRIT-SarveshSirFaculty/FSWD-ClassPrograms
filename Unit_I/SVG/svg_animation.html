@@ -1,0 +1,43 @@
+<!doctype html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h1>HTML5 svg tutorial</h1>
+    <div>
+        <p>
+            animate</p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="300px" height="200px">
+        <rect x="1" y="1" width="120" height="40" fill="blue" stroke="red" stroke-width="2">
+            <animate attributeName="width" to="300" dur="5s" repeatCount="1" fill="remove"/>
+        </rect>
+        <rect x="1" y="50" width="120" height="40" fill="blue" stroke="red" stroke-width="2">
+            <animate attributeName="width" to="300" dur="5s" repeatCount="1" fill="freeze"/>
+        </rect>
+    </svg>
+    </div>
+    <div>
+        <p>
+            animateColor</p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="300px" height="200px">
+        <rect x="1" y="1" width="120" height="40" fill="blue" stroke="red" stroke-width="2">
+            <animateColor to="red" attributeName="fill" dur="5s" repeatCount="indefinite" />
+        </rect>
+    </svg>
+    </div>
+    <div>
+        <p>
+            animateMotion</p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="300px" height="200px">
+        <path d="M-12.5,-6.75 L12.5,-6.75 L 0,-43.75 z" fill="blue" stroke="gray" stroke-width="3">
+            <animateMotion dur="6s" repeatCount="indefinite" rotate="auto" >
+                <mpath xlink:href="#path1"/>
+            </animateMotion>
+        </path>
+         <path id="path1" d="M 25,100 Q 50,20 75,70 T135,70 T185,70 T235,70 T275,70" fill="none" stroke="blue" stroke-width="3" />
+    </svg>
+    </div>
+</body>
+</html>
