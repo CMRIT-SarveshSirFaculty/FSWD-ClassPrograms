@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <style>
+        body, html{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            font-size: 12px;
+        }
+
+        .media{
+            width: 320px;
+            margin: 15px auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Video and audio tutorial</h1>
+    <div class="media">
+        <h2>Play Time Example</h2>
+        <video id="video" src="video_sample.mp4" controls preload="auto" width="340" height="220"></video>
+        <div class="log">
+            Current Play Time : <span id="currentTime"></span>
+        </div>
+        <div class="log">
+            Total Play Time : <span id="totalTime"></span>
+        </div>
+    </div>
+</body>
+<script>
+
+    var video = document.getElementById("video");
+    var currentTime = document.getElementById("currentTime");
+    var totalTime = document.getElementById("totalTime");
+
+    //realize loadedmetadata event  (indicate total duration)
+    video.addEventListener("loadedmetadata",
+        function () {
+            var totalSec = video.duration;         //total video duration
+            var time = secondsToTime(totalSec);    //Import function to change seconds to Time(HH:MM:SS) format
+
+            //Display the calculated time on screen 
+            totalTime.innerHTML = parseInt(totalSec)
+                               + "sec (" + time.h + ":" + time.m + ":" + time.s + ")";
+        }
+    , false);
+
+    //realize timeupdate event (indicate play time status)
+    video.addEventListener("timeupdate",
+        function () {
+            var currSec = video.currentTime;           //currernt video time
+            var c_time = secondsToTime(currSec);       
+
+            //Display current play time 
+            currentTime.innerHTML = parseInt(currSec)
+                                 + "sec (" + c_time.h + ":" + c_time.m + ":" + c_time.s + ")";
+        }
+    , false);
+
+    function secondsToTime(secs) {
+
+        //hours
+        var hours = Math.floor(secs / (60 * 60));
+
+        //minutes
+        var divisor_for_minutes = secs % (60 * 60);
+        var minutes = Math.floor(divisor_for_minutes / 60);
+
+        //sends
+        var divisor_for_seconds = divisor_for_minutes % 60;
+        var seconds = Math.ceil(divisor_for_seconds);
+
+        //Set as json type’s object 
+        var obj = { "h": intToString(hours), "m": intToString(minutes), "s": intToString(seconds) };
+
+        return obj;
+    }
+
+    //Ensure that each time is set in 2 characters according to the time format. 
+    function intToString(time) { 
+        return (parseInt(time) < 10 ? ("0" + time) : time);
+    }
+
+</script>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <style>
+        body, html{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            font-size: 12px;
+        }
+
+        .media{
+            margin: 15px auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Video and audio tutorial</h1>
+    <!-- video control -->
+    <div class="media">
+        <h2>Custom Controls : Play & Pause</h2>
+        <video id="video" src="video_sample.mp4"  width="340" height="220"></video>
+        <div>
+            <!-- video control : button elements -->
+            <button id="v-play" type="button">
+                play</button>
+            <button id="v-pause" type="button" disabled>
+                pause</button>
+        </div>
+    </div>
+    <script>
+
+        var play_button = document.getElementById("v-play");
+        var pause_button = document.getElementById("v-pause");
+
+        play_button.addEventListener("click", function () {
+            video.play();  //movie play
+        }, false);
+
+        pause_button.addEventListener("click", function () {
+            video.pause(); //movie pause
+        }, false);
+
+        var video = document.getElementById("video");
+
+        video.addEventListener("play", function () {
+            play_button.disabled = true;    //play button disabled
+            pause_button.disabled = false;  //pause button enabled
+        }, false);
+
+        video.addEventListener("pause", function () {
+            play_button.disabled = false;   //play button enabled
+            pause_button.disabled = true;   //pause button disabled
+        }, false);
+
+        video.addEventListener("ended", function () {
+            play_button.disabled = false;   //play button enabled
+            pause_button.disabled = true;  //pause button disabled
+        }, false);
+    </script>
+</body>
+</html>
