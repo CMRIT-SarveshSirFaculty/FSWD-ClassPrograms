@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <style>
+        body, html{
+            margin: 0;
+            padding: 0;
+        }
+
+        body { font-size: 12px; }
+
+        .media { text-align: center }
+    </style>
+</head>
+<body>
+    <h1>Video and audio tutorial</h1>
+    <div class="media">
+        <h2>Resize Example</h2>
+
+        <!-- video element -->
+        <video id="video" src="video_sample.mp4" controls width="320" height="220" ></video>
+
+        <!-- button elements to resize video -->
+        <div>
+            <button id="size_big">600 * 410</button>
+            <button id="size_middle">320 * 220</button>
+            <button id="size_small">150 * 150</button>
+        </div>
+    </div>
+
+    <script>
+        var video = document.getElementById("video")
+        
+        //button event : resize to big size
+        document.getElementById("size_big").addEventListener("click", function() {
+            video.width = 600;
+            video.height = 410;
+        }, false);
+        
+        //button event : resize to middle size
+        document.getElementById("size_middle").addEventListener("click", function() {
+            video.width = 320;
+            video.height = 220;
+        }, false);
+        
+        //button event : resize to small
+        document.getElementById("size_small").addEventListener("click", function() {
+            video.width = 150;
+            video.height = 150;
+        }, false);
+    </script>
+
+</html>

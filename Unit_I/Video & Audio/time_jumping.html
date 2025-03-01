@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <style>
+        body, html{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            font-size: 12px;
+        }
+
+        .media {
+            margin: 15px auto; 
+            text-align: center
+        }
+    </style>
+</head>
+<body>
+    <h1>Video and audio tutorial</h1>
+    <div class="media">
+        <h2>Timeline Seek Example</h2>
+        <video id="video" src="video_sample.mp4" controls width="340" height="220">
+        </video>
+        <!—button element for timeline seek -->
+        <div>
+            <button id="v-back">
+                5 Sec Backward</button>
+            <button id="v-forw">
+                5 Sec Forward</button>
+        </div>
+        <div>
+            <button id="v-goto">
+                Go to 40 Sec</button>
+        </div>
+    </div>
+    <script>
+        var video = document.getElementById("video");           //video
+        var back_button = document.getElementById("v-back");    //back button
+        var forw_button = document.getElementById("v-forw");    //forward button
+        var go_button = document.getElementById("v-goto");      //jumpping button
+
+        //Move 5 seconds back 
+        back_button.addEventListener("click", function () {
+            video.currentTime -= 5
+        }, false);
+
+        //Move 5 seconds forward 
+        forw_button.addEventListener("click", function () {
+            video.currentTime += 5
+        }, false);
+
+        //Move timeline to 40 seconds 
+        go_button.addEventListener("click", function () {
+            video.currentTime = 40
+        }, false);
+    </script>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <style>
+        body, html{
+            margin: 0;
+            padding: 0;
+        }
+
+        body { 
+        font-size: 12px; 
+        }
+
+        .media {
+        margin: 15px auto; 
+        text-align: center
+        }
+    </style>
+</head>
+<body>
+    <h1>Video and audio tutorial</h1>
+    <div class="media">
+        <h2>progress Example</h2>
+        <video id="video" src="video_sample.mp4" width="340" height="220" controls poster="poster_sample.png"></video>
+        <div>Progress : <span id="state"></span></div>
+    </div>
+</body>
+<script>
+    var video = document.getElementById("video")    
+
+    //Realizes progress event
+    video.addEventListener("progress", function () {
+
+        //Returns a TimeRanges object representing the buffered parts of the media
+        var buffered = video.buffered;
+
+        // returns time in seconds of the last buffered TimeRa
+        var buffered_end = buffered.end(0);
+
+        //Change to progress rate % 
+        var progress = (buffered_end / video.duration) * 100;
+
+        //Display progress rate 
+        document.getElementById("state").innerHTML = parseInt(progress) + "%"
+
+    }, false);
+    
+</script>
+</html>
