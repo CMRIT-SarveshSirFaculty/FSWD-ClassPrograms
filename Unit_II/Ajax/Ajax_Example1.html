@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+        <title>AJAX in JavaScript</title>
+        <style>
+            body{
+                padding-left: 20px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>AJAX in JavaScript</h3>
+        <p>Please Enter Country Name</p>
+        <input type="text" name="country" id="country">
+        <p>
+            <button type="button" onclick="loadData()">Load Data</button>
+        </p>
+        Capital is:<span id="capital"></span>
+        <script>
+            function loadData(){
+                    var country=document.getElementById("country").value;
+                    var xhttp=new XMLHttpRequest();
+                    xhttp.onreadystatechange=function(){
+                            if(xhttp.readyState== 4 && this.status==200){
+                                var responseData=xhttp.responseText;
+                                var jsonData=JSON.parse(responseData);
+
+                                var capital=jsonData[0].capital;
+                                document.getElementById("capital").innerHTML=capital;
+                            }
+                    };
+                    xhttp.open("GET","https://restcountries.com/v3.1/name/"+country+"?fullText=true",true);
+                    xhttp.send();
+                }
+                   
+            /*
+            0:request not initialized
+            1:server conncetion established
+            2:request received
+            3:processing request
+            4:request finished and response is ready
+            */
+        </script>
+    </body>
+</html>
