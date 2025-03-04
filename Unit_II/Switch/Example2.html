@@ -1,0 +1,47 @@
+<html>
+<head>
+     <title>JavaScript Nested Switch Statements Example</title>
+</head>
+<body>
+<script>
+// E - ECE, C - CS, I - Information Technology.
+    let branch = prompt("Enter your branch").toUpperCase();;
+    let semester = prompt("Enter your semester").toUpperCase();
+    switch(branch) // Outer switch.
+   {
+     case 'E':
+         switch(semester) // Inner switch
+        {
+           case 5:
+             document.write("Microcontroller, Power Electronics");
+             break;
+        }
+      break;
+
+   case 'C':
+       switch(semester) // Inner switch.
+      {
+         case 5:
+           document.write("Java, Python, Data structure");
+           break;
+      }
+    break;
+
+   case 'I':
+       switch(semester)
+      {
+        case 5:
+            document.write("EDC, Java, Data structure, Microprocessor");
+            break;
+        default:
+            document.write("Invalid Semester");
+      }
+   break;
+
+  default:
+         document.write("Invalid selection");
+         break;
+ }
+</script>
+</body>
+</html>
