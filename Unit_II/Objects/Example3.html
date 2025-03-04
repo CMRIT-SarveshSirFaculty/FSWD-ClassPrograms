@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Objects</h2>
+<p>Creating a JavaScript Object:</p>
+
+<p id="demo"></p>
+<p id="test"></p>
+<script>
+const person = new Object();
+person.firstName = "Sree";
+person.lastName = "Leela";
+person.age = 50;
+person.eyeColor = "blue"; 
+
+document.getElementById("demo").innerHTML =
+person.firstName + " is " + person.age + " years old.";
+
+let txt="";
+for(let x in person){
+    txt +=person[x] +" ";
+};
+document.getElementById("test").innerHTML=txt;
+</script>
+
+</body>
+</html>
