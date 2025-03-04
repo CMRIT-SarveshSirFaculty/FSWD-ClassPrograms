@@ -1,1 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Form Events</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // Change background on focus and blur
+            $("#name").focus(function(){
+                $(this).css("background-color", "#ffffcc");
+            }).blur(function(){
+                $(this).css("background-color", "#ffffff");
+            });
+
+            // Detect input change and display in output
+            $("#name").on("input", function(){
+                $("#output").text($(this).val());
+            });
+
+            // Handle form submission
+            $("#myForm").submit(function(event){
+                event.preventDefault(); // Prevent actual form submission
+                alert("Form submitted! Name: " + $("#name").val());
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <form id="myForm">
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" placeholder="Type your name..." required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <p>Live Preview: <span id="output"></span></p>
+
+</body>
+</html>
 
