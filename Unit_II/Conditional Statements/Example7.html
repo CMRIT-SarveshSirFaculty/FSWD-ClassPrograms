@@ -1,0 +1,41 @@
+<!-- if(condition-1)
+       statement1; // It will execute if condition-1 is true.
+else if(condition-2)
+       statement2; // It will execute if condition-2 is true.
+else if(condition-3)
+       statement3;
+...
+...
+else if(condition-n)
+      statementn; // It will execute if condition-n is true.
+else
+    statement; // It will execute if none of the condition is true. -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CONDITIONAL STATEMENT-DEMO</title>
+    </head>
+    <body>
+        <script>
+             let eng, science, maths;
+                eng = 80;
+                science = 90;
+                maths = 95;
+                let total = eng + science + maths;
+                let per = total/3;
+                document.write("Total marks: " +total, "<br>");
+                document.write("Percentage: " +per, "<br>")
+
+                if (per >= 90.0)
+                        document.write("Grade A");
+                else if (per >= 80.0)
+                        document.write("Grade B");
+                else if (per >= 70.0)
+                        document.write("Grade C");
+                else if (per >= 60.0)
+                        document.write("Grade D");
+                else
+                        document.write("Grade F");
+        </script>
+    </body>
+</html>
