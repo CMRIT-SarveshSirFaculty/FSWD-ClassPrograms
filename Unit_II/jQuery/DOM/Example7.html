@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>The jQuery DOM elements Example</title>
+	
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+	</script>
+
+	<script>
+		$(document).ready(function() {
+
+			// Access with tag
+			$("p").css("color", "red");
+			$("button").click(function() {
+				
+				// Access with id
+				$("#d1").css("color", "purple");
+				$("#d2").css("color", "green");
+				$("#d3").css("color", "black");
+
+				// Converting into javascript object.
+				$("#d4").get(0).reset();
+			});
+		});
+	</script>
+</head>
+
+<body style="text-align:center;">
+
+	<div>
+		<h4 id="d1">Hello</h4>
+		
+		<h1 id="d2">CMR Institute of Technology</h1>
+		
+		<h3 id="d3">
+			A Computer Science Portal for Geeks
+		</h3>
+		
+		<form id="d4">
+			Enter name:
+			<input type="text" />
+		</form>
+		<br>
+		
+		<button>Button</button>
+		<br>
+		
+		<p>
+			Clicking button will Resets the
+			textbox and changes the background
+			colors of the above texts.
+		</p>
+
+	</div>
+</body>
+
+</html>

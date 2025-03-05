@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<title>The jQuery Example</title>
+<script src="https://www.tutorialspoint.com/jquery/jquery-3.6.0.js"></script>
+<script>
+   $(document).ready(function() {
+      $("button").click(function(){
+         $(".inner").append("<p>CMRIT</p>");
+      });
+   });
+</script>
+</head>
+<body>
+   <div class="container">
+      <h2>jQuery append() Method</h2>
+      <div class="inner">Hello</div>
+      <div class="inner">Goodbye</div>
+   </div>
+   <br>
+   <button>Add Text</button>
+</body>
+</html>
+
+
+<!-- jQuery append() Method
+The jQuery append() method adds the content at the end of the matched each 
+element(s). You can also append multiple elements in a single function call.
+
+Following is the syntax of the append() method:
+
+$(selector).append(content, [content]);
+Here content parameter could be a HTML string, a DOM element, text node,
+ array of elements and text nodes or jQuery object to insert at the end of 
+ each element in the set of matched elements. -->

@@ -1,0 +1,38 @@
+1-4572930780
+9876-170113-153655
+
+
+jQuery - Get Content
+jQuery provides html() and text() methods.
+
+Get Form Fields
+jQuery val() method is used to get the value from any form field.
+
+jQuery - Set Content
+jQuery html() and text() methods can be used to set the content of the matched HTML element. Following is the syntax of these two methods when they are used to set the values:
+
+$(selector).html(val, [function]);
+
+$(selector).text(val, [function]);
+
+Set Form Fields
+jQuery val() method is also used to set the value from any form field. 
+
+jQuery - Replacement Elements
+The jQuery replaceWith() method can be used to replace a complete DOM element with another HTML or DOM element. Following is the syntax of the method:
+
+$(selector).replaceWith(val);
+
+
+jQuery append() Method
+The jQuery append() method adds the content at the end of the matched each element(s). 
+
+$(selector).append(content, [content]);
+
+
+jQuery appendTo() Method
+The jQuery appendTo() method performs the same task as done by appendTo(). The major difference is in the syntax-specifically, in the placement of the content and target.
+
+$(content).appendTo(selector);
+
+Following is the syntax of the appendTo() method:

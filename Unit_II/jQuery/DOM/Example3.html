@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>The jQuery Example</title>
+<script src="https://www.tutorialspoint.com/jquery/jquery-3.6.0.js"></script>
+<script>
+   $(document).ready(function() {
+      $("#b1").click(function(){
+         $("p").replaceWith("<h1>This is new heading</h1>");
+      });
+      $("#b2").click(function(){
+         $("h1").replaceWith("<h2>This is another heading</h2>");
+      });
+   });
+</script>
+</head>
+<body>
+   <p>Click below button to replace me</p>
+
+   
+   <button id="b1">Replace Paragraph</button>
+   <button id="b2">Replace Heading</button>
+</body>
+</html>
+
+<!-- jQuery - Replacement Elements
+The jQuery replaceWith() method can be used to replace a complete DOM 
+element with another HTML or DOM element. Following is the syntax of the 
+method:
+
+$(selector).replaceWith(val);
+Here val is what you want to have instead of original element. 
+This could be HTML or simple text. -->

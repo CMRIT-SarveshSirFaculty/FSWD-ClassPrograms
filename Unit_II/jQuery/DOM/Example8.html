@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>The jQuery Example</title>
+
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+	</script>
+
+	<script>
+		$(document).ready(function() {
+
+			// Access with tag
+			$("h1").css("color", "green");
+			$("button").click(function() {
+
+				// d1 gets replaced with d4.
+				$("#d1")[0].outerHTML = 
+				"<h3 id='d4'>A Computer Science Portal for Geeks</h3>";
+				$("#d4").css("color", "black");
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<center>
+		<div>
+			<h1 id="d1">Hello Welcome to CMR Institute of Technology</h1>
+			
+			<button>Button</button>
+			<br>
+			
+			<h4>
+				The above button changes the
+				content of the above text.
+			</h4>
+		</div>
+	</center>
+</body>
+
+</html>

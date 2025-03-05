@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<title>The jQuery Example</title>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script>
+   $(document).ready(function() {
+      $("#text").click(function(){
+         alert($("p").text());
+      });
+      $("#html").click(function(){
+         alert($("p").html());
+      });
+   });
+</script>
+</head>
+<body>
+   <p>The quick <b>brown fox</b> jumps over the <b>lazy dog</b></p>
+   
+   <button id="text">Get Text</button>
+   <button id="html">Get HTML</button>
+</body>
+</html>
+
+<!-- jQuery - Get Content
+jQuery provides html() and text() methods to extract the content of the 
+matched HTML element. Following is the syntax of these two methods:
+
+The jQuery text() method returns plain text value of the content where as 
+html() returns the content with HTML tags. You will need to use jQuery 
+selectors to select the target element. -->
+

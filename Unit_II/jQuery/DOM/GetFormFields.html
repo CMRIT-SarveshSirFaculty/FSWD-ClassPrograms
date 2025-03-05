@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<title>The jQuery Example</title>
+<script src="https://www.tutorialspoint.com/jquery/jquery-3.6.0.js"></script>
+<script>
+   $(document).ready(function() {
+      $("#b1").click(function(){
+         alert($("#name").val());
+      });
+      $("#b2").click(function(){
+         alert($("#class").val());
+      });
+   });
+</script>
+</head>
+<body>
+   <p>Name: <input type="text" id="name" value="Zara Ali"/></p>
+   <p>Class: <input type="text" id="class" value="Class 12th"/></p>
+   
+   <button id="b1">Get Name</button>
+   <button id="b2">Get Class</button>
+</body>
+</html>
+
+
+<!-- Get Form Fields
+jQuery val() method is used to get the value from any form field. 
+Following is simple syntax of this method.
+$(selector).val();
+The above example to show how to get the value an input field with 
+jQuery method val()  -->

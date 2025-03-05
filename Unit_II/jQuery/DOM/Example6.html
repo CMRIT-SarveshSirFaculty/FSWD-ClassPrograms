@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<title>The jQuery Example</title>
+<script src="https://www.tutorialspoint.com/jquery/jquery-3.6.0.js"></script>
+<script>
+   $(document).ready(function() {
+      $("button").click(function(){
+         $( ".hello" ).replaceWith("<h2>New Element</h2>" );
+      });
+   });
+</script>
+</head>
+<body>
+   <div class="container">
+      <h2>jQuery replaceWith() Method</h2>
+      <div class="hello">Hello</div>
+      <div class="goodbye">Goodbye</div>
+      <div class="hello">Hello</div>
+   </div>
+   <br>
+   
+   <button>Replace Element</button>
+</body>
+</html>
