@@ -1,1 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/index.css">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form action="/index" method="POST" onsubmit="return validateForm()">
+        <div>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Log In</button>
+    </form>
 
+    <script>
+        function validateForm() {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            // Check if email and password are valid
+            var validEmail = 'admin@gmail.com';
+            var validPassword = '123';
+
+            if (email === validEmail && password === validPassword) {
+                // Valid credentials, allow form submission
+                return true;
+            } else {
+                // Invalid credentials, show alert
+                alert('Invalid email or password.');
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
