@@ -1,0 +1,10 @@
+GET http://localhost:6000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQ01SSVQiLCJpYXQiOjE3MTI5OTcxMjl9.GynQqKi8YRdl9g58vL-3xemFbGKaGRE8_dxnyzquUXI
+###
+
+POST http://localhost:6000/login
+Content-Type: application/json
+
+{
+    "username":"CMRIT"
+}
