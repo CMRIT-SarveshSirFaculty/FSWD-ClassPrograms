@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("<span>Hello World!</span>").appendTo("p");
+  });
+});
+</script>
+</head>
+<body>
+
+<button>Insert span element at the end of each p element</button>
+
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+
+</body>
+</html>
+
+<!--  the span tag is a generic inline container element. You use this element to 
+ wrap sections of text for styling purposes or to add attributes to a section 
+ of text without creating a new line of content. -->
