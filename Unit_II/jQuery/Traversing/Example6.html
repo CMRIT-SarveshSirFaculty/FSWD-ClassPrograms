@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<title>The jQuery Example</title>
+<script src="https://www.tutorialspoint.com/jquery/jquery-3.6.0.js"></script>
+<script>
+   $(document).ready(function() {
+      $("button").click(function(){
+         $( ".child-two" ).parents("div").css( "border", "2px solid red" );
+      });
+   });
+</script>
+<style>
+   .great-grand-parent *{display:block; border:2px solid #aaa; color:#aaa; padding:5px; margin:5px;}
+</style>
+</head>
+<body>
+   <div style="width:525px;" class="great-grand-parent">
+      <div style="width:500px;" class="grand-parent">
+         <ul class="parent">
+            <li class="child-one">Child One</li>
+            <li class="child-two">Child Two</li>
+         </ul>
+      </div>
+    </div>
+   <br>
+   <button>Mark Parents</button>
+</body>
+</html>
